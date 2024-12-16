@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --gradient1:#807ECE;
+    --gradient2:#8E7ECE;
+    --primary-color: #2D2A37 ;
+    --secondary-color:#462878;
+    --secondary-button-color:#7F45E2;
+    --text-color: #6B6B6B;
+    --white:white;
+  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Rubik", sans-serif;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, var(--gradient1), var(--gradient2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+}
+#calc{
+    border-radius: 40px;
+    background-color: var(--primary-color);
+    width:400px;
+    padding: 2em;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+#calc h3{
+    font-size: 1.2em;
+    font-weight: 300;
+    color: white;
+}
+#operations {
+    border-radius: 10px;
+    text-align: right;
+}
+#previus-operation{
+    padding: 0.8em;
+    /* overflow-wrap serve para quebrar a linha quando nao tiver mais espaço */
+    overflow-wrap:break-word ;
+    min-height: 0.8em;
+    font-size: 0.8em;
+    color: var(--text-color);
+}
+#current-operation{
+    padding: 0.8em;
+    font-size: 2em;
+    font-weight: 700;
+    /* overflow-wrap serve para quebrar a linha quando nao tiver mais espaço */
+    overflow-wrap:break-word ;
+    min-height: 3em;
+}
+#buttons-container{
+    display: grid;
+    /* 1fr esta dividindo em 4 fraçoes */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:10px
+}
+button{
+    border:1px solid transparent;
+    height: 65px;
+    width:65px;
+    font-weight:400;
+    border-radius: 50%;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    font-size:1.6em;
+}
+.number{
+    background-color: var(--primary-color);
+    box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
+}
+button:active {
+    transform: translateY(-3px); 
+    box-shadow: 5px 5px 12px 4px rgba(0, 0, 0, 0.4); 
+}
+#buttons-container #equal-btn{
+    flex: 1;
+    width: auto;
+    border-radius: 20px ;
+    grid-column: span 2;   /* permite que o botao de igual ocupe dois espaços do grid */
+    background-color: var(--secondary-button-color);
+}
